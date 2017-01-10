@@ -15,5 +15,13 @@ ddh=-Kd*dh-Kp*h;
 [ LfLfh LgLfh ] = get_LfLfh_LgLfh( q,dq,alpha,theta_begin,theta_end,robot );
 u=LgLfh^-1*(-LfLfh+ddh);
 
+% for i=1:4
+%     if u(i)>40
+%         u(i)=40;
+%     end
+%     if u(i)<-40
+%         u(i)=-40;
+%     end
+% end
 end
 

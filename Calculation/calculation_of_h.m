@@ -1,5 +1,5 @@
 clear all
-M=5;
+M=10;
 N=4;
 alpha=sym('alpha',[N,M+1],'real');
 q=sym('q',[11,1],'real');
@@ -38,7 +38,7 @@ dhdq=jacobian(h,qs);
 d_dhdq=jacobian(dhdq*dqs,qs); %d_dhdq=d/dq(dh/dq*qdot)
 
 
-mkdir('../util/h_functions')
+mkdir(['../util/h_functions_M=' num2str(M)])
 matlabFunction(h, 'file', ['../util/h_functions/get_h.m'], 'vars', {q,dq,s,ds,alpha,theta_begin,theta_end});
 matlabFunction(h0, 'file', ['../util/h_functions/get_h0.m'], 'vars', {q,dq,alpha,theta_begin,theta_end});
 matlabFunction(hd, 'file', ['../util/h_functions/get_hd.m'], 'vars', {q,dq,s,ds,alpha,theta_begin,theta_end});
